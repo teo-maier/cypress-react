@@ -1,12 +1,14 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Recipe } from "../../lib";
 import Card from "react-bootstrap/esm/Card";
 import Button from "react-bootstrap/esm/Button";
 import "./recipes.css";
-
+import { ROUTES } from "../../constants/routes";
 
 const AllRecipes = () => {
+  const navigate = useNavigate();
   const [recipes, setRecipes] = useState<Recipe[]>([]);
 
   useEffect(() => {
@@ -31,6 +33,11 @@ const AllRecipes = () => {
             <Button
               variant="outline-primary"
               style={{ position: "unset", color: "none" }}
+              onClick={() =>
+                navigate(
+                  `${ROUTES.RECIPES}/${ROUTES.VIEW_ROUTE(`${recipe.id}`)}`
+                )
+              }
             >
               See recipe
             </Button>

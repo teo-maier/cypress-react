@@ -5,9 +5,9 @@ const RECIPES = [
   {
     id: "1",
     name: "Baked Shrimp Scampi",
-    preptime: 0,
-    waittime: 0,
-    cooktime: 0,
+    prepTime: 10,
+    waitTime: 5,
+    cookTime: 25,
     servings: 6,
     calories: 2565,
     instructions:
@@ -34,9 +34,9 @@ const RECIPES = [
   {
     id: "2",
     name: "Strawberries Romanov (La Madeleine copycat)",
-    preptime: 0,
-    waittime: 0,
-    cooktime: 0,
+    prepTime: 0,
+    waitTime: 0,
+    cookTime: 0,
     servings: 4,
     comments: "",
     calories: 0,
