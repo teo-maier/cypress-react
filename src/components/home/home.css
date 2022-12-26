@@ -1,0 +1,23 @@
+@import url(//fonts.googleapis.com/css?family=Tangerine);
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    margin-top: 100px;
+    position: relative;
+}
+
+.signature {
+    position: absolute;
+    top: 4px;
+    margin-bottom: 16px;
+    font-size: 40px;
+    color: #f69318;
+    font-family: 'Tangerine', serif;
+}
+
+.motto {
+    font-size: 54px;
+    margin: 0;
+}
