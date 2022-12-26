@@ -2,6 +2,7 @@
 export const ROUTES = {
 	LOGIN: `/login`,
 	UNAUTHORIZED: `/unauthorized`,
+	DASHBOARD: `/dashboard`,
 	NOT_FOUND: `/not-found`,
 	LIFESTYLE: `/lifestyle`,
 	HOW_TO: '/howto',

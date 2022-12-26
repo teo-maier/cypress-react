@@ -29,7 +29,11 @@ const AllRecipes = () => {
           />
           <Card.Body>
             <Card.Title>{recipe.name}</Card.Title>
-            <Card.Text>{recipe.tags}</Card.Text>
+            <div className="recipe-tags">
+              {recipe.tags.map((i) => (
+                <Card.Text>{i}</Card.Text>
+              ))}
+            </div>
             <Button
               variant="outline-primary"
               style={{ position: "unset", color: "none" }}

@@ -14,7 +14,7 @@ export function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path={`${ROUTES.DASHBOARD}`} element={<Home />} />
         <Route path={`${ROUTES.RECIPES}`} element={<AllRecipes />} />
         <Route
           path={`${ROUTES.RECIPES}/${ROUTES.VIEW_ROUTE(":id")}`}
