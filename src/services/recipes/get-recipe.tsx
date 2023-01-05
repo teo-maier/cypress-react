@@ -2,10 +2,7 @@ import { useEffect, useState, useMemo } from "react";
 import React from "react";
 import { Recipe } from "../../lib";
 import { useParams } from "react-router-dom";
-
-// interface RecipeProps {
-//   recipe?: Recipe;
-// }
+import LanguageSwitcher from "../../components/language-switcher/language-switcher";
 
 const RecipeById: React.FC<any> = () => {
   const [recipe, setRecipe] = useState<Recipe>();

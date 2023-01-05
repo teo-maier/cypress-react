@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "../components/home/home";
+import LanguageSwitcher from "../components/language-switcher/language-switcher";
 import Navbar from "../components/navbar/navbar";
 import { ROUTES } from "../constants/routes";
 import AllRecipes from "../services/recipes/get-all-recipes";
@@ -11,6 +12,9 @@ import "./App.css";
 export function App() {
   return (
     <div className="App">
+      <div className="language">
+        <LanguageSwitcher />
+      </div>
       <Routes>
         <Route path={`${ROUTES.MAIN}`} element={<Navbar />} />
         <Route
