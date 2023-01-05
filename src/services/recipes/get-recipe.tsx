@@ -10,7 +10,6 @@ import { useParams } from "react-router-dom";
 const RecipeById: React.FC<any> = () => {
   const [recipe, setRecipe] = useState<Recipe>();
   const { id } = useParams();
-  console.log(id);
 
   useEffect(() => {
     fetch(`http://localhost:3100/api/recipes/${id}`)

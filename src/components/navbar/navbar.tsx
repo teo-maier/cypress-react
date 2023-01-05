@@ -28,7 +28,11 @@ export const Navbar = () => {
           </li>
         </ul>
       </div>
-      <Button variant="outline-warning" className="button">
+      <Button
+        variant="outline-warning"
+        className="button"
+        onClick={() => navigate(`${ROUTES.RECIPES}/${ROUTES.NEW_RECIPE}`)}
+      >
         Get started
       </Button>
     </nav>

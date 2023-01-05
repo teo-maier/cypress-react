@@ -27,11 +27,13 @@ const AllRecipes = () => {
             variant="top"
             src="https://storcpdkenticomedia.blob.core.windows.net/media/recipemanagementsystem/media/recipe-media-files/recipes/retail/x17/16714-birthday-cake-600x600.jpg?ext=.jpg"
           />
-          <Card.Body>
+          <Card.Body className="card-body">
             <Card.Title>{recipe.name}</Card.Title>
             <div className="recipe-tags">
               {recipe.tags.map((i) => (
-                <Card.Text>{i}</Card.Text>
+                <div className="tag-item">
+                  <Card.Text>{i}</Card.Text>
+                </div>
               ))}
             </div>
             <Button

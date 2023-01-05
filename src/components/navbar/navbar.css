@@ -43,6 +43,13 @@ nav {
     font-family: 'Outfit', sans-serif;
 }
 
+.btn:hover {
+    background-color: transparent;
+    color: #f69318;
+    border-color: #f69318;
+    opacity: 0.7;
+}
+
 .logo {
     display: flex;
     margin-left: 36px;

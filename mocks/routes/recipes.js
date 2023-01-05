@@ -1,4 +1,3 @@
-
 // recipes data
 
 const RECIPES = [
@@ -33,12 +32,11 @@ const RECIPES = [
   },
   {
     id: "2",
-    name: "Strawberries Romanov (La Madeleine copycat)",
+    name: "Strawberries Romanov",
     prepTime: 0,
     waitTime: 0,
     cookTime: 0,
     servings: 4,
-    comments: "",
     calories: 0,
     instructions:
       "Wash strawberries and cut the tops off. Let strawberries drain.  Mix together heavy whipping cream, powdered sugar, and the brandy. Beat with a mixer till this becomes thick.  Place strawberries into glasses and spoon over the sauce.\r\n",
@@ -148,6 +146,31 @@ module.exports = [
                 message: "User not found",
               });
             }
+          },
+        },
+      },
+    ],
+  },
+  {
+    id: "post-recipe", // route id
+    url: "/api/recipes/new", // url in express format
+    method: "POST", // HTTP method
+    variants: [
+      {
+        id: "success", // variant id
+        type: "success", // variant handler id
+        options: {
+          status: 201, // status to send
+        },
+      },
+      {
+        id: "error", // variant id
+        type: "json", // variant handler id
+        options: {
+          status: 400, // status to send
+          // body to send
+          body: {
+            message: "Error",
           },
         },
       },

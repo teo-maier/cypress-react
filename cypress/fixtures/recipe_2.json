@@ -1,0 +1,18 @@
+{
+    "id": "2",
+    "name": "Strawberries Romanov",
+    "prepTime": 0,
+    "waitTime": 0,
+    "cookTime": 0,
+    "servings": 4,
+    "calories": 0,
+    "instructions":
+      "Wash strawberries and cut the tops off. Let strawberries drain.  Mix together heavy whipping cream, powdered sugar, and the brandy. Beat with a mixer till this becomes thick.  Place strawberries into glasses and spoon over the sauce.\r\n",
+    "ingredients": [
+      "2 tbsp powdered sugar\r",
+      "1/2 pt heavy whipping cream\r",
+      "1 lb strawberries, (2 pints)\r",
+      "4 tbsp brandy"
+    ],
+    "tags": ["fruit", "dessert", "strawberries", "copycat", "untried"]
+  }
