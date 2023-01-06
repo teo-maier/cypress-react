@@ -1,112 +1,155 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/esm/Button";
 import { useNavigate } from "react-router-dom";
-import { ROUTES } from "../../constants/routes";
 import { Recipe } from "../../lib";
+import { useForm, SubmitHandler } from "react-hook-form";
+import axios from "axios";
+
+type FormValues = {
+  id: number;
+  name: string;
+  prepTime: number;
+  waitTime: number;
+  cookTime: number;
+  noServings: number;
+  calories: number;
+  ingredients: string;
+  tags: Array<string>;
+  instructions: string;
+};
 
 const CreateRecipe = () => {
-  const navigate = useNavigate();
-  const [newRecipe, setNewRecipe] = useState<Recipe>();
+  const { register, handleSubmit } = useForm<FormValues>();
 
-  const handleSubmit = (e: any) => {
-    const body = e.target.body.value;
-    console.log(body);
-    fetch(`http://localhost:3100/api/recipes/new`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-        setNewRecipe(result);
-        navigate(`${ROUTES.DASHBOARD}`);
+  // const [newRecipe, setNewRecipe] = useState<Recipe>();
+
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    console.log(data);
+    // const array = new Array();
+    // array.push(data);
+    // console.log(array)
+
+    // fetch(`http://localhost:3100/api/recipes/new`, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     "Access-Control-Allow-Origin": "*",
+    //     "Access-Control-Allow-Credentials": "true",
+    //   },
+    //   body: JSON.stringify(data),
+    // })
+    //   .then((res) => res.json())
+    //   .then((result) => {
+    //     setNewRecipe(result);
+    //     result.send();
+    //     // navigate(`${ROUTES.DASHBOARD}`);
+    //   });
+
+    axios
+      .post("http://localhost:3100/api/recipes/new", {
+        body: data,
+      })
+      .then((response) => {
+        console.log(response.data);
+        // Handle data
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 
   return (
     <div className="container contact-form">
-      {/* <div className="contact-image">
-        <img
-          src="https://play-lh.googleusercontent.com/3L30Tsrmfd4JXDHEJmFk4tdYCqXVI5lZ4Ya-6lyKgGadgPxMwLwi3obg7HDqFXxjYPA"
-          alt="rocket_contact"
-        />
-      </div> */}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit(onSubmit)} target="_self">
         <h3>Create your own recipe</h3>
         <div className="row">
           <div className="col-md-6 form">
             <div className="form-group">
               <input
-                type="text"
-                name="name"
+                id="id"
+                type="number"
+                className="form-control"
+                placeholder="Id"
+                {...register("id")}
+              />
+            </div>
+            <div className="form-group">
+              <input
+                id="name"
                 className="form-control"
                 placeholder="Name"
+                {...register("name")}
               />
             </div>
             <div className="form-group">
               <input
+                id="prepTime"
                 type="number"
-                name="prepTime"
                 className="form-control"
                 placeholder="Preparation time"
+                {...register("prepTime")}
               />
             </div>
             <div className="form-group">
               <input
+                id="waitTime"
                 type="number"
-                name="waitTime"
                 className="form-control"
                 placeholder="Waiting time"
+                {...register("waitTime")}
               />
             </div>
             <div className="form-group">
               <input
+                id="cookTime"
                 type="number"
-                name="cookTime"
                 className="form-control"
                 placeholder="Cooking time"
+                {...register("cookTime")}
               />
             </div>
             <div className="form-group">
               <input
+                id="noServings"
                 type="number"
-                name="servings"
                 className="form-control"
                 placeholder="Number of servings"
+                {...register("noServings")}
               />
             </div>
             <div className="form-group">
               <input
+                id="calories"
                 type="number"
-                name="calories"
                 className="form-control"
                 placeholder="Calories"
+                {...register("calories")}
               />
             </div>
           </div>
           <div className="col-md-6 form">
             <div className="form-group">
               <textarea
-                name="ingredients"
+                id="ingredients"
                 className="form-control"
                 placeholder="Ingredients"
+                {...register("ingredients")}
               ></textarea>
             </div>
             <div className="form-group">
               <textarea
-                name="tags"
+                id="tags"
                 className="form-control"
                 placeholder="Tags"
+                {...register("tags")}
               ></textarea>
             </div>
             <div className="form-group">
               <textarea
-                name="instructions"
+                id="instructions"
                 className="form-control"
                 placeholder="Instructions"
+                {...register("instructions")}
               ></textarea>
             </div>
           </div>

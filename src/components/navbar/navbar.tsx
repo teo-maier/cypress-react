@@ -22,7 +22,7 @@ export const Navbar = () => {
           <li className="items" onClick={() => navigate(`${ROUTES.RECIPES}`)}>
             {t("recipes")}
           </li>
-          <li className="items" onClick={() => navigate(`${ROUTES.HOW_TO}`)}>
+          <li className="items" onClick={() => navigate(`${ROUTES.ABOUT}`)}>
             {t("about")}
           </li>
           <li className="items" onClick={() => navigate(`${ROUTES.LIFESTYLE}`)}>

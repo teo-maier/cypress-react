@@ -54,11 +54,11 @@ export function App() {
           }
         />
         <Route
-          path={`${ROUTES.HOW_TO}`}
+          path={`${ROUTES.ABOUT}`}
           element={
             <div>
               <Navbar />
-              <h1>How to</h1>
+              <h1>About</h1>
             </div>
           }
         />

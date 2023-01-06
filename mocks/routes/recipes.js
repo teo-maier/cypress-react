@@ -78,6 +78,24 @@ module.exports = [
     ],
   },
   {
+    id: "create-recipe", // route id
+    url: "/api/recipes/new", // url in express format
+    method: "POST", // HTTP method
+    variants: [
+      {
+        id: "main", // variant id
+        type: "status", // variant handler id
+        options: {
+          status: 201, // status to send
+          headers: {
+            // response headers to send
+            "maier-header": 10,
+          },
+        },
+      },
+    ],
+  },
+  {
     id: "get-recipe-1", // route id
     url: `/api/recipes/${RECIPES[0].id}`, // url in express format
     method: "GET", // HTTP method
@@ -146,31 +164,6 @@ module.exports = [
                 message: "User not found",
               });
             }
-          },
-        },
-      },
-    ],
-  },
-  {
-    id: "post-recipe", // route id
-    url: "/api/recipes/new", // url in express format
-    method: "POST", // HTTP method
-    variants: [
-      {
-        id: "success", // variant id
-        type: "success", // variant handler id
-        options: {
-          status: 201, // status to send
-        },
-      },
-      {
-        id: "error", // variant id
-        type: "json", // variant handler id
-        options: {
-          status: 400, // status to send
-          // body to send
-          body: {
-            message: "Error",
           },
         },
       },

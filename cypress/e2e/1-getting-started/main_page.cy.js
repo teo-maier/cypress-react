@@ -1,6 +1,6 @@
 context("Main page", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000/");
+    cy.visit("http://localhost:3000/dashboard");
   });
 
   it("should check header words in english and font", function () {

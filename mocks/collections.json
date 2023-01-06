@@ -7,11 +7,10 @@
       "get-user-1:success",
       "get-user-2:success",
       "get-user-3:success",
-      "add-headers:enabled",
       "get-recipes:success",
       "get-recipe-1:success",
       "get-recipe-2:success",
-      "post-recipe:success"
+      "create-recipe:main"
     ]
   },
   {
