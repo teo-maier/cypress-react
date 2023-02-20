@@ -1,6 +1,6 @@
 context("Main page", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000/dashboard");
+    cy.visit("http://localhost:3000");
   });
 
   it("should check header words in english and font", function () {
@@ -14,6 +14,8 @@ context("Main page", () => {
       "font-family",
       "Outfit, sans-serif"
     );
+    cy.get(".logo").click()
+    cy.get("body").contains("Best trending Now.")
   });
 
   it("should check romanian translation", function () {
